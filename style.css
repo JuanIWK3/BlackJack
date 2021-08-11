@@ -29,6 +29,18 @@ main {
     position: relative;
 
 }
+.projects h3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-decoration: none;
+    color: green;
+    border-right: 1px solid rgb(0, 255, 0);
+    border-bottom: 1px solid rgb(0, 255, 0);
+    border-radius: .3rem;
+    padding: 0.5rem;
+
+}
 button {
     margin: 10px;
     border: 1px solid rgb(0, 255, 0);
