@@ -50,7 +50,7 @@ function start() {
             document.getElementById("newcard2").textContent = "New card: 0"
             sum1 = 0
             sum2 = 0
-            document.getElementById("turn1").textContent = ""'
+            document.getElementById("turn1").textContent = ""
             document.getElementById("turn2").textContent = ""
             gameStarted = false;
             document.getElementById("start").textContent = "Start"
