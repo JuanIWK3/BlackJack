@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title h2 {
+    font-size: 64px;
+    margin-bottom: 30px;
+  }
+  
+}
+
+.game {
+  display: flex;
+  width: 80vw;
+
+  .players {
+    height: 70vh;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .pstats{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .pgame {
+      flex: 9;
+      width: 100%;
+      background-color: white;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      .card, .newcard {
+        margin: 10px;
+        border: 1px solid rgb(0, 255, 0);
+        border-radius: 0.3rem;
+        padding: 10px;
+        background-color: white;
+        font-size: 1.5rem;
+        width: max-content;
+        margin: 10px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .draw, .stop {
+        margin: 10px;
+        border: 1px solid rgb(0, 255, 0);
+        border-radius: 0.3rem;
+        padding: 10px;
+        background-color: white;
+        font-size: 1.5rem;
+
+        cursor: pointer;
+
+
+      }
+    }
+  }
+
+  #playerone {
+    border: 2px solid lightgreen;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+  }
+  
+  .between {
+    height: 70vh;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    #start {
+      margin: 10px;
+      border: 1px solid rgb(0, 255, 0);
+      border-radius: 0.3rem;
+      padding: 10px;
+      background-color: white;
+      font-size: 1.5rem;
+
+      cursor: pointer;
+    }
+
+  }
+
+  #playertwo {
+    border: 2px solid lightblue;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

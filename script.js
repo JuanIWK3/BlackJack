@@ -1,71 +1,138 @@
-let sum = 0
-let blackJack = 0
-let outTheGame = 0
-let already = false // to add the count only one time
+let sum1 = 0;
+let sum2 = 0;
+player1 = false
+player2 = false
+gameStarted = false;
+player1finished = false;
+player2finished = false;
 
-// Choose two cards; shows the sum; shows a message depending on the sum; counts the wins and losses;
-function start() { 
-    document.getElementById("cannot").textContent = ""
-    if (sum === 0) {
-        let firstCard = Math.floor(Math.random() * 10) + 2; 
-        let secondCard = Math.floor(Math.random() * 10) + 2;
-        sum = firstCard + secondCard
-        if (sum < 21) {
-            document.getElementById("inter").textContent = "Do you want to draw a new card? 🙂"
-        } else if (sum === 21 && already == false) {
-            document.getElementById("inter").textContent = "Whohoo! You've got BlackJack! 🥳"
-            blackJack ++
-            blacktext = "🥳: " + blackJack
-            document.getElementById("black-jack").textContent = blacktext
-            already = true
-            
-        } else if (sum > 21 && already == false) {
-            document.getElementById("inter").textContent = "You're out of the game! 😭"
-            outTheGame ++
-            outText = "😭: " + outTheGame
-            document.getElementById("out-the-game").textContent = outText
-            already = true
+
+function start() {
+    if (gameStarted == false) {
+        player = Math.floor(Math.random() * 2) + 1
+
+        let card1 = Math.floor(Math.random() * 10) + 2
+        document.getElementById("newcard1").textContent = "New card: " + card1;
+        sum1 += card1
+        document.getElementById("p1card").textContent = "Sum: " + sum1;
+
+        let card2 = Math.floor(Math.random() * 10) + 2
+        document.getElementById("newcard2").textContent = "New card: " + card2;
+        sum2 += card2
+        document.getElementById("p2card").textContent = "Sum: " + sum2;
+
+        if (player == 1) {
+            player1 = true
+            document.getElementById("turn1").textContent = "Your Turn"
+
         }
-        document.getElementById("number").textContent = sum
+        else if (player == 2) {
+            player2 = true
+            document.getElementById("turn2").textContent = "Your Turn"
+
+        }
+
+        gameStarted = true;
         document.getElementById("start").textContent = "Finish"
-
     } else {
-        sum = 0
-        document.getElementById("number").textContent = sum
-        document.getElementById("start").textContent = "Start"
-        document.getElementById("inter").textContent = ""
-    }
-    already = false
-    
- }
- 
- // Sum another card; shows a message depending on the sum; counts the wins and losses;
- function draw() {
-    if (already == true) {
-        document.getElementById("cannot").textContent = "You cannot draw more cards"
-    }
-     numberEl = document.getElementById("number").textContent
-     if (numberEl != 0) {
-        if (sum < 21) {
-            sum += Math.floor(Math.random() * 10) + 2
-            document.getElementById("number").textContent = sum  
+        function finish() {
+            document.getElementById("p1card").textContent = "Sum: 0"
+            document.getElementById("p2card").textContent = "Sum: 0"
+            document.getElementById("newcard1").textContent = "New card: 0"
+            document.getElementById("newcard2").textContent = "New card: 0"
+            sum1 = 0
+            sum2 = 0
+            document.getElementById("turn1").textContent = ""
+            document.getElementById("turn2").textContent = ""
+            gameStarted = false;
+            document.getElementById("start").textContent = "Start"
+            player1finished = false;
+            player2finished = false;
+            document.getElementById("msg1").textContent = ""
+            document.getElementById("msg2").textContent = ""
         }
-        if (sum < 21) {
-            document.getElementById("inter").textContent = "Do you want to draw a new card? 🙂" 
-        } else if (sum === 21 && already == false) {
-            document.getElementById("inter").textContent = "Whohoo! You've got BlackJack! 🥳"
-            blackJack ++
-            blacktext = "🥳: " + blackJack
-            document.getElementById("black-jack").textContent = blacktext
-            already = true
-            
-        } else if (sum > 21 && already == false) {
-            document.getElementById("inter").textContent = "You're out of the game! 😭" 
-            result = document.getElementById("inter").textContent
-            outTheGame ++
-            outText = "😭: " + outTheGame
-            document.getElementById("out-the-game").textContent = outText
-            already = true
+        finish()
+    }
+}
+
+function draw1() {
+    if ((player1 == true || player2finished == true) && player1finished == false) {
+        let card1 = Math.floor(Math.random() * 10) + 2
+        document.getElementById("newcard1").textContent = "New card: " + card1;
+        sum1 += card1
+        document.getElementById("p1card").textContent = "Sum: " + sum1;
+        player1 = false
+        player2 = true
+        if (player2finished == false) {
+            document.getElementById("turn1").textContent = ""
+            document.getElementById("turn2").textContent = "Your Turn"
         }
     }
- }
+    if (sum1 > 21) {
+        player1finished = true
+        document.getElementById("msg1").textContent = "You're out"
+    }
+}
+
+function draw2() {
+    if ((player2 == true || player1finished == true) && player2finished == false) {
+        let card2 = Math.floor(Math.random() * 10) + 2
+        document.getElementById("newcard2").textContent = "New card: " + card2;
+        sum2 += card2
+        document.getElementById("p2card").textContent = "Sum: " + sum2;
+        player2 = false
+        player1 = true
+        if (player1finished == false) {
+            document.getElementById("turn1").textContent = "Your Turn"
+            document.getElementById("turn2").textContent = ""
+        }
+    }
+    if (sum2 > 21) {
+        player2finished = true
+        document.getElementById("msg2").textContent = "You're out"
+    }
+}
+
+function stop1() {
+    player1finished = true
+
+    if (player2finished == false) {
+        document.getElementById("turn1").textContent = ""
+        document.getElementById("turn2").textContent = "Your Turn"
+    }
+
+    if (player1finished == true && player2finished == true) {
+        if (sum1 > sum2) {
+            alert("Player 1 Wins");
+        }
+        if (sum1 == sum2) {
+            alert("The game ended with a draw")
+        }
+        else {
+            alert("Player 2 Wins");
+        }
+    }
+
+}
+
+function stop2() {
+    player2finished = true
+
+    if (player1finished == false) {
+        document.getElementById("turn1").textContent = "Your Turn"
+        document.getElementById("turn2").textContent = ""
+    }
+
+    if (player1finished == true && player2finished == true) {
+        if (sum1 > sum2) {
+            alert("Player 1 Wins");
+        }
+        if (sum1 == sum2) {
+            alert("The game ended with a draw")
+        }
+        else {
+            alert("Player 2 Wins");
+        }
+    }
+
+}

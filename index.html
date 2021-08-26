@@ -3,34 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <title>BlackJack</title>
 </head>
 
 <body>
-    <div class="projects">
-        <a href="https://juaniwk3.github.io/projects.html">
-            <h3>Projects</h3>
-        </a>
-    </div>
     <main>
-        <div class="blackjack">
-            <h1>BlackJack</h1>
-            <button id="number">0</button>
-            <div class="btns">
-                <button id="start" onclick="start()">Start</button>
-                <button onclick="draw()">Draw</button>
-            </div>
-            <p id="black-jack">🥳: 0</p>
-            <p id="out-the-game">😭: 0</p>
-            <p id="inter"></p>
-            <p id="cannot"></p>
+        <div class="title">
+            <h2>BlackJack</h2>
         </div>
-
-        <img id="carjack" src="./images/carjack.png" alt="carjack-img">
+        <div class="game">
+            <div class="players" id="playerone">
+                <div id="p1stats" class="pstats">
+                    <h2>Player One</h2>
+                    <p id="p1win">🥳: </p>
+                    <p id="p1loss">😭: </p>
+                </div>
+                <div id="p1game" class="pgame">
+                    <p id="turn1"></p>
+                    <button id="newcard1" class="newcard">New card: 0</button>
+                    <button id="p1card" class="card">Sum: 0</button>
+                    <div class="buttons">
+                        <button id="p1draw" class="draw" onclick="draw1()">Draw</button>
+                        <button id="stop1" class="stop" onclick="stop1()">Stop</button>
+                    </div>
+                    <p id="msg1"></p>
+                </div>
+            </div>
+            <div class="between">
+                <button id="start" onclick="start()">Start</button>
+            </div>
+            <div class="players" id="playertwo">
+                <div id="p2stats" class="pstats">
+                    <h2>Player Two</h2>
+                    <p id="p2win">🥳: </p>
+                    <p id="p2loss">😭: </p>
+                </div>
+                <div id="p2game" class="pgame">
+                    <p id="turn2"></p>
+                    <button id="newcard2" class="newcard">New card: 0</button>
+                    <button id="p2card" class="card">Sum: 0</button>
+                    <div class="buttons">
+                        <button id="p2draw" class="draw" onclick="draw2()">Draw</button>
+                        <button id="stop2" class="stop" onclick="stop2()">Stop</button>
+                    </div>
+                    <p id="msg2"></p>
+                </div>
+            </div>
+        </div>
     </main>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
