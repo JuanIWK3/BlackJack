@@ -36,7 +36,7 @@ main .title h2 {
 }
 
 .game .players {
-  height: 70vh;
+  height: 60vh;
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
@@ -75,7 +75,6 @@ main .title h2 {
       -ms-flex: 9;
           flex: 9;
   width: 100%;
-  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,7 +92,7 @@ main .title h2 {
 
 .game .players .pgame .card, .game .players .pgame .newcard {
   margin: 10px;
-  border: 1px solid lime;
+  border: 1px solid lightgray;
   border-radius: 0.3rem;
   padding: 10px;
   background-color: white;
@@ -107,9 +106,16 @@ main .title h2 {
   border-right: 0;
 }
 
+@media only screen and (max-width: 610px) {
+  .game .players .pgame .buttons {
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
 .game .players .pgame .draw, .game .players .pgame .stop {
   margin: 10px;
-  border: 1px solid lime;
+  border: 1px solid lightgray;
   border-radius: 0.3rem;
   padding: 10px;
   background-color: white;
@@ -117,10 +123,20 @@ main .title h2 {
   cursor: pointer;
 }
 
+.game .players .pgame .draw:hover, .game .players .pgame .stop:hover {
+  background-color: rgba(182, 182, 182, 0.137);
+}
+
 .game #playerone {
   border: 2px solid lightgreen;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+}
+
+.game #playertwo {
+  border: 2px solid #74dcff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .game .between {
@@ -143,9 +159,18 @@ main .title h2 {
           justify-content: center;
 }
 
-.game .between #start {
+.game .between .placar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game .between #start, .game .between .wins {
   margin: 10px;
-  border: 1px solid lime;
+  border: 1px solid lightgray;
   border-radius: 0.3rem;
   padding: 10px;
   background-color: white;
@@ -153,9 +178,7 @@ main .title h2 {
   cursor: pointer;
 }
 
-.game #playertwo {
-  border: 2px solid lightblue;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+.game .between #start:hover, .game .between .wins:hover {
+  background-color: rgba(182, 182, 182, 0.137);
 }
 /*# sourceMappingURL=style.css.map */
