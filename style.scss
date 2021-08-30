@@ -9,6 +9,7 @@
 body {
   display: flex;
   flex-direction: column;
+  width: 100vw;
 }
 
 header {
@@ -52,10 +53,11 @@ main {
 
 .game {
   display: flex;
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
 
     
   }
@@ -67,6 +69,8 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     .pstats{
       flex: 1;
@@ -106,14 +110,6 @@ main {
         border-top: 0;
         border-left: 0;
         border-right: 0;
-      }
-      @media only screen and (max-width: 691px) {
-        .buttons {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
       }
 
       .draw, .stop {
@@ -180,8 +176,8 @@ main {
         background: rgba(93, 170, 170, 0.068);
       }
   }
-
 }
+
 footer {
   cursor: pointer;
 
