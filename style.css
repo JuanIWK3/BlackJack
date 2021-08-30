@@ -55,17 +55,23 @@ header h3 {
 main {
   width: 100%;
   height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 80px 7fr;
-      grid-template-rows: 80px 7fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 main .title {
   font-size: 48px;
   margin-bottom: 30px;
   margin: 0 auto;
-  height: 100px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .game {
@@ -82,6 +88,7 @@ main .title {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 50%;
   }
 }
 
