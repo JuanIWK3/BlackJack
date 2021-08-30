@@ -192,7 +192,7 @@ rule = false;
 
 function rules() {
     if (rule == false) {
-        document.getElementById("rules").textContent = "When the game started, both players will receive a random card and a player will be randomly chosen. You can draw a new card or stop. The player that have the sum equals 21 or the greater sum after both players stopped will win. If the player exceeds 21, he will lose."
+        document.getElementById("rules").textContent = "When the game starts, both players will receive a random card and a player will be randomly chosen. You can draw a new card or stop. The player that have the sum equals 21 or the greater sum after both players stopped will win. If the player exceeds 21, he will lose."
         rule = true;
     }
     else if (rule == true) {
