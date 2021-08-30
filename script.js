@@ -3,6 +3,7 @@ let sum2 = 0;
 player1 = false;
 player2 = false;
 gameStarted = false;
+gameFinished = false;
 player1finished = false;
 player2finished = false;
 let player1wins = 0;
@@ -59,6 +60,7 @@ function start() {
             document.getElementById("start").textContent = "Start"
             player1finished = false;
             player2finished = false;
+            gameFinished = false;
             player = 0
             document.getElementById("msg1").textContent = ""
             document.getElementById("msg2").textContent = ""
@@ -73,7 +75,7 @@ function start() {
 }
 
 function draw1() {
-    if ((player1 == true || player2finished == true) && player1finished == false) {
+    if (((player1 == true || player2finished == true) && player1finished == false) && (gameFinished == false)) {
         let card1 = Math.floor(Math.random() * 10) + 2
         document.getElementById("newcard1").textContent = "New card: " + card1;
         sum1 += card1
@@ -91,7 +93,8 @@ function draw1() {
         }
     }
     if (sum1 > 21) {
-        player1finished = true
+        player1finished = true;
+        gameFinished = true;
         document.getElementById("msg1").textContent = "You're out"
         alert("Player 2 won")
         player2wins += 1;
@@ -105,7 +108,7 @@ function draw1() {
 }
 
 function draw2() {
-    if ((player2 == true || player1finished == true) && player2finished == false) {
+    if (((player2 == true || player1finished == true) && player2finished == false) & (gameFinished == false)) {
         let card2 = Math.floor(Math.random() * 10) + 2
         document.getElementById("newcard2").textContent = "New card: " + card2;
         sum2 += card2
@@ -122,6 +125,7 @@ function draw2() {
         }
     }
     if (sum2 > 21) {
+        gameFinished = true;
         player2finished = true
         document.getElementById("msg2").textContent = "You're out"
         alert("Player 1 won")
