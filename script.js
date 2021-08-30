@@ -9,8 +9,11 @@ let player1wins = 0;
 let player2wins = 0;
 
 
+
+
 function start() {
     if (gameStarted == false) {
+        document.getElementById("start").style.border = "1px solid lightgray"
         player = Math.floor(Math.random() * 2) + 1
 
         let card1 = Math.floor(Math.random() * 10) + 2
@@ -20,23 +23,23 @@ function start() {
 
         let card2 = Math.floor(Math.random() * 10) + 2
         document.getElementById("newcard2").textContent = "New card: " + card2;
-        sum2 += card2
+        sum2 += 10
         document.getElementById("p2card").textContent = "Sum: " + sum2;
 
         if (player == 1) {
             player1 = true
             player2 = false
             document.getElementById("turn1").textContent = "Your Turn"
-            document.getElementById("p1draw").style.border = "1px solid green";
-            document.getElementById("stop1").style.border = "1px solid green";
+            document.getElementById("p1draw").style.border = "1px solid rgb(0, 231, 247)";
+            document.getElementById("stop1").style.border = "1px solid rgb(0, 231, 247)";
 
         }
         else if (player == 2) {
             player2 = true
             player1 = false
             document.getElementById("turn2").textContent = "Your Turn"
-            document.getElementById("p2draw").style.border = "1px solid rgb(116, 220, 255)";
-            document.getElementById("stop2").style.border = "1px solid rgb(116, 220, 255)";
+            document.getElementById("p2draw").style.border = "1px solid rgb(255, 60, 60)";
+            document.getElementById("stop2").style.border = "1px solid rgb(255, 60, 60)";
 
         }
 
@@ -63,6 +66,7 @@ function start() {
             document.getElementById("stop2").style.border = "1px solid lightgray";
             document.getElementById("p1draw").style.border = "1px solid lightgray";
             document.getElementById("stop1").style.border = "1px solid lightgray";
+            document.getElementById("start").style.border = "1px solid lightgreen";
         }
         finish()
     }
@@ -81,8 +85,8 @@ function draw1() {
             document.getElementById("turn2").textContent = "Your Turn"
             document.getElementById("p1draw").style.border = "1px solid lightgray";
             document.getElementById("stop1").style.border = "1px solid lightgray";
-            document.getElementById("p2draw").style.border = "1px solid rgb(116, 220, 255)";
-            document.getElementById("stop2").style.border = "1px solid rgb(116, 220, 255)";
+            document.getElementById("p2draw").style.border = "1px solid rgb(255, 60, 60)";
+            document.getElementById("stop2").style.border = "1px solid rgb(255, 60, 60)";
 
         }
     }
@@ -111,8 +115,8 @@ function draw2() {
         if (player1finished == false) {
             document.getElementById("turn1").textContent = "Your Turn"
             document.getElementById("turn2").textContent = ""
-            document.getElementById("p1draw").style.border = "1px solid green";
-            document.getElementById("stop1").style.border = "1px solid green";
+            document.getElementById("p1draw").style.border = "1px solid rgb(0, 231, 247)";
+            document.getElementById("stop1").style.border = "1px solid rgb(0, 231, 247)";
             document.getElementById("p2draw").style.border = "1px solid lightgray";
             document.getElementById("stop2").style.border = "1px solid lightgray";
         }
@@ -124,7 +128,7 @@ function draw2() {
         player1wins += 1;
         document.getElementById("player1-wins").textContent = player1wins;
     }
-    if (sum1 == 21) {
+    if (sum2 == 21) {
         alert("Player 2 won")
         player2wins += 1;
         document.getElementById("player2-wins").textContent = player2wins;
@@ -182,4 +186,17 @@ function stop2() {
         }
     }
     document.getElementById("msg2").textContent = "Stopped"
+}
+
+rule = false;
+
+function rules() {
+    if (rule == false) {
+        document.getElementById("rules").textContent = "When the game started, both players will receive a random card and a player will be randomly chosen. You can draw a new card or stop. The player that have the sum equals 21 or the greater sum after both players stopped will win. If the player exceeds 21, he will lose."
+        rule = true;
+    }
+    else if (rule == true) {
+        document.getElementById("rules").textContent = ""
+        rule = false;
+    }
 }
