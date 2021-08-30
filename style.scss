@@ -41,13 +41,14 @@ main {
   height: 100%;
 
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 80px 7fr;
 
 
-  .title, title h2 {
-    font-size: 64px;
+  .title {
+    font-size: 48px;
     margin-bottom: 30px;
     margin: 0 auto;
+    height: 100px;
   }
 }
 
