@@ -10,6 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100vw;
+  align-items: center;
+  justify-content: center;
 }
 
 header {
@@ -38,7 +40,7 @@ header {
 
 main {
   width: 100%;
-  height: 100%;
+  height: 100v;
 
   display: flex;
   flex-direction: column;
@@ -56,25 +58,25 @@ main {
 
 .game {
   display: flex;
-  width: 80%;
-  margin: 0 auto;
+  padding: 0 64px 0 64px;
 
   @media only screen and (max-width: 768px) {
+    display: flex;
     flex-direction: column;
-    width: 50%;
-
-    
+    margin: 0 auto;
+    width: max-content;  
   }
 
   .players {
     height: 60vh;
+
     flex: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+
+    padding: 20px;
 
     .pstats{
       flex: 1;
@@ -133,14 +135,25 @@ main {
 
   #playerone {
     border: 2px solid rgb(0, 231, 247);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    @media only screen and (max-width: 768px) {
+      border-top-right-radius: 16px;
+      border-bottom-left-radius: 0;
+
+    }
   }
   
   #playertwo {
     border: 2px solid rgb(255, 60, 60);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    @media only screen and (max-width: 768px) {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 16px;
+      border-bottom-left-radius: 16px;
+    }
   }
 
   .between {
@@ -175,10 +188,10 @@ main {
       &:hover { background-color: rgba(182, 182, 182, 0.137);}
     }
 
-      #start {
-        border-color: lightgreen;
-        background: rgba(93, 170, 170, 0.068);
-      }
+    #start {
+      border-color: lightgreen;
+      background: rgba(93, 170, 170, 0.068);
+    }  
   }
 }
 
