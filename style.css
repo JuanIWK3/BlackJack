@@ -1,13 +1,17 @@
 * {
   margin: 0;
-  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
   text-decoration: none;
+  color: black;
+  font-size: 3.5vw;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,32 +19,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100vw;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header {
-  height: 48px;
   width: 100%;
-  background: -webkit-gradient(linear, right top, left top, color-stop(90%, white), to(lightgray));
-  background: linear-gradient(to left, white 90%, lightgray);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 16px;
-  text-decoration: none;
 }
 
 header a {
@@ -52,63 +37,71 @@ header a {
           align-items: center;
 }
 
-header h3 {
-  cursor: pointer;
-  color: black;
-  font-family: 'Times New Roman', Times, serif;
-  margin-left: 8px;
-}
-
-main {
-  width: 100%;
-  height: 100v;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+header a img {
+  margin-right: 8px;
 }
 
 main .title {
-  font-size: 48px;
-  margin-bottom: 30px;
-  margin: 0 auto;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 64px 0 64px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5.25vw;
 }
 
-@media only screen and (max-width: 768px) {
-  .game {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
+main .title h2 {
+  font-size: 5.25vw;
+}
+
+main .game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .game #turn1, main .game #turn2 {
+  color: white;
+  font-size: 2.1vw;
+}
+
+@media only screen and (min-width: 790px) {
+  main .game {
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin: 0 auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
-.game .players {
-  height: 60vh;
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+main .players {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 16px;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,32 +112,17 @@ main .title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.game .players .pstats {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+main .players .ptitle {
+  justify-self: flex-start;
+  margin-bottom: 5.25vw;
 }
 
-.game .players .pstats h2::after {
+main .players .ptitle::after {
   content: " .";
   color: white;
   display: block;
@@ -152,11 +130,7 @@ main .title {
   height: 1px;
 }
 
-.game .players .pgame {
-  -webkit-box-flex: 9;
-      -ms-flex: 9;
-          flex: 9;
-  width: 100%;
+main .players .pgame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,69 +146,15 @@ main .title {
           justify-content: center;
 }
 
-.game .players .pgame .card, .game .players .pgame .newcard {
-  margin: 10px;
-  border: 1px solid lightgray;
-  border-radius: 0.3rem;
-  padding: 10px;
-  background-color: white;
-  font-size: 1.5rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  margin: 10px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
+main #playerone {
+  border: 2px solid aqua;
 }
 
-.game .players .pgame .draw, .game .players .pgame .stop {
-  margin: 10px;
-  border: 1px solid lightgray;
-  border-radius: 0.3rem;
-  padding: 10px;
-  background-color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
+main #playertwo {
+  border: 2px solid red;
 }
 
-.game .players .pgame .draw:hover, .game .players .pgame .stop:hover {
-  background-color: rgba(182, 182, 182, 0.137);
-}
-
-.game #playerone {
-  border: 2px solid #00e7f7;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-}
-
-@media only screen and (max-width: 768px) {
-  .game #playerone {
-    border-top-right-radius: 16px;
-    border-bottom-left-radius: 0;
-  }
-}
-
-.game #playertwo {
-  border: 2px solid #ff3c3c;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-@media only screen and (max-width: 768px) {
-  .game #playertwo {
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 16px;
-    border-bottom-left-radius: 16px;
-  }
-}
-
-.game .between {
-  height: 70vh;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+main .between {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,53 +168,59 @@ main .title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-width: 16vw;
+  padding: 8px;
 }
 
-.game .between .scoreboard {
+main .between .scoreboard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.game .between .scoreboard .wins {
-  cursor: default;
-}
-
-.game .between #start, .game .between .wins {
-  margin: 10px;
-  border: 1px solid lightgray;
-  border-radius: 0.3rem;
-  padding: 10px;
-  background-color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.game .between #start:hover, .game .between .wins:hover {
-  background-color: rgba(182, 182, 182, 0.137);
-}
-
-.game .between #start {
-  border-color: lightgreen;
-  background: rgba(93, 170, 170, 0.068);
+main .between .scoreboard .wins {
+  border-radius: .2rem;
 }
 
 footer {
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  justify-self: flex-end;
   text-align: center;
-  padding: 32px 32px 16px 32px;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(70%, white), color-stop(rgba(211, 211, 211, 0.411)), to(white));
-  background: linear-gradient(to top, white 70%, rgba(211, 211, 211, 0.411), white);
+  background: lightgray;
+  width: 100%;
+  padding: 16px;
+}
+
+button {
+  margin: 8px;
+  background: transparent;
+  border: 1px solid lightgray;
+  font-size: 3.5vw;
+}
+
+.newcard, .card {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: .2rem;
+}
+
+#start, .draw, .stop {
+  cursor: pointer;
+  border-radius: .2rem;
+  padding: 8px;
+}
+
+#start {
+  font-size: 2.8vw;
+  border-color: lightgreen;
 }
 /*# sourceMappingURL=style.css.map */

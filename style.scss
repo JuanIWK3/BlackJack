@@ -1,92 +1,89 @@
+$border-base: 1px solid lightgray;
+$base-font-size: 3.5vw;
+
+
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
   text-decoration: none;
+  color: black;
+  font-size: $base-font-size; 
+  font-family: 'Courier New', Courier, monospace;
+  
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 header {
-  height: 48px;
   width: 100%;
-  background: linear-gradient(to left, rgb(255, 255, 255) 90%, lightgray);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  
-  padding-left: 16px;
-  text-decoration: none;
 
   a {
     display: flex;
     align-items: center;
+
+    img {
+      margin-right: 8px;
+    }
   }
 
-  h3 {
-    cursor: pointer;
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 8px;
-  }
 }
 
 main {
-  width: 100%;
-  height: 100v;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-
   .title {
-    font-size: 48px;
-    margin-bottom: 30px;
-    margin: 0 auto;
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
-}
-
-.game {
-  display: flex;
-  padding: 0 64px 0 64px;
-
-  @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    width: max-content;  
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $base-font-size * 1.5;
+
+    h2 {
+      font-size: $base-font-size * 1.5;
+    }
   }
 
-  .players {
-    height: 60vh;
-
-    flex: 4;
+  .game {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    padding: 20px;
+    #turn1, #turn2 {
+      color: white;
+      font-size: $base-font-size * .6;
+    }
 
-    .pstats{
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+    @media only screen and (min-width: 790px) {
+      flex-direction: row;
+    }
+  }
 
-      h2::after {
+  .players {
+    height: max-content;
+    width: max-content;
+
+    padding: 16px;
+
+    border: $border-base;
+    border-radius: 0.3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .ptitle {
+      justify-self: flex-start;
+      margin-bottom: $base-font-size * 1.5;
+
+      &::after {
         content: " .";
         color: rgb(255, 255, 255);
         display: block;
@@ -94,122 +91,77 @@ main {
         height: 1px;
       }
     }
-
+    
     .pgame {
-      flex: 9;
-      width: 100%;
-
       display: flex;
       flex-direction: column;
-
       align-items: center;
       justify-content: center;
-
-      .card, .newcard {
-        margin: 10px;
-        border: 1px solid lightgray;
-        border-radius: 0.3rem;
-        padding: 10px;
-        background-color: white;
-        font-size: 1.5rem;
-        width: max-content;
-        margin: 10px;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-      }
-
-      .draw, .stop {
-        margin: 10px;
-        border: 1px solid lightgray;
-        border-radius: 0.3rem;
-        padding: 10px;
-        background-color: white;
-        font-size: 1.5rem;
-
-        cursor: pointer;
-
-        &:hover { background-color: rgba(182, 182, 182, 0.137);}
-      }
     }
+    
   }
 
   #playerone {
-    border: 2px solid rgb(0, 231, 247);
-    border-top-left-radius: 16px;
-    border-bottom-left-radius: 16px;
-    @media only screen and (max-width: 768px) {
-      border-top-right-radius: 16px;
-      border-bottom-left-radius: 0;
-
-    }
+    border: 2px solid aqua;
+  }
+  #playertwo {
+    border: 2px solid red;
   }
   
-  #playertwo {
-    border: 2px solid rgb(255, 60, 60);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    @media only screen and (max-width: 768px) {
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 16px;
-      border-bottom-left-radius: 16px;
-    }
-  }
-
   .between {
-    height: 70vh;
-    flex: 1;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
+    min-width: 16vw;
+
+    padding: 8px;
 
     .scoreboard {
       display: flex;
       align-items: center;
-      
+      justify-content: center;
+
       .wins {
-        cursor: default;
+        border-radius: .2rem;
       }
-
     }
-
-    #start, .wins {
-      margin: 10px;
-      border: 1px solid lightgray;
-      border-radius: 0.3rem;
-      padding: 10px;
-      background-color: white;
-      font-size: 1.5rem;
-
-      cursor: pointer;
-      &:hover { background-color: rgba(182, 182, 182, 0.137);}
-    }
-
-    #start {
-      border-color: lightgreen;
-      background: rgba(93, 170, 170, 0.068);
-    }  
   }
 }
 
+
 footer {
-  cursor: pointer;
-
-  position: absolute;
-  bottom: 0;
-
-  width: 100%;
-  height: max-content;
-
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
+  align-self: center;
+  justify-self: flex-end;
   text-align: center;
+  background: lightgray;
+  width: 100%;
+  padding: 16px;
+}
 
-  padding: 32px 32px 16px 32px;
+button {
+  margin: 8px;
+  background: transparent;
+  border: $border-base;
+  font-size: $base-font-size;
 
-  background: linear-gradient(to top, white 70%, rgba(211, 211, 211, 0.411), white);
+  
+}
+
+.newcard, .card {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: .2rem;
+}
+
+#start, .draw, .stop {
+  cursor: pointer;
+  border-radius: .2rem;
+  padding: 8px;
+  
+}
+#start {
+  font-size: $base-font-size * 0.8;
+  border-color: lightgreen;
 }
