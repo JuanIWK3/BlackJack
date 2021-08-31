@@ -9,7 +9,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   padding: 0px;
   display: -webkit-box;
@@ -25,12 +25,40 @@ body {
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   background-color: rgba(211, 211, 211, 0.37);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header h3 {
-  font-size: 1.75vw;
+  font-size: 2.8vw;
+}
+
+header .rules {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header .rules h2 {
+  font-size: 2.8vw;
+  text-align: end;
 }
 
 header a {
@@ -197,17 +225,6 @@ main .between .scoreboard .wins {
   border-radius: .2rem;
 }
 
-footer {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  justify-self: flex-end;
-  text-align: center;
-  background: rgba(211, 211, 211, 0.371);
-  width: 100%;
-  padding: 16px;
-}
-
 button {
   margin: 8px;
   background: transparent;
@@ -234,6 +251,9 @@ button {
 }
 
 #rules {
-  font-size: 2.1vw;
+  font-size: 2.8vw;
+  margin: 16px;
+  text-align: center;
+  background-color: rgba(211, 211, 211, 0.37);
 }
 /*# sourceMappingURL=style.css.map */

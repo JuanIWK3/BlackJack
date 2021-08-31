@@ -13,7 +13,7 @@ $base-font-size: 3.5vw;
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   padding: 0px;
 
@@ -23,22 +23,37 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
   width: 100%;
   background-color: rgba(211, 211, 211, 0.37);
+  justify-content: space-between;
 
   h3 {
-    font-size: $base-font-size * .5
+    font-size: $base-font-size * .8
+  }
+  
+  .rules {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: flex-end;
+
+    h2 {
+      font-size: $base-font-size * .8;
+      text-align: end;
+    }
   }
 
   a {
     display: flex;
     align-items: center;
 
+
     img {
       margin-right: 8px;
     }
   }
-
 }
 
 main {
@@ -136,16 +151,6 @@ main {
   }
 }
 
-
-footer {
-  align-self: center;
-  justify-self: flex-end;
-  text-align: center;
-  background: rgba(211, 211, 211, 0.371);
-  width: 100%;
-  padding: 16px;
-}
-
 button {
   margin: 8px;
   background: transparent;
@@ -174,5 +179,8 @@ button {
 }
 
 #rules {
-  font-size: $base-font-size * 0.6;
+  font-size: $base-font-size * 0.8;
+  margin: 16px;
+  text-align: center;
+  background-color: rgba(211, 211, 211, 0.37);
 }
