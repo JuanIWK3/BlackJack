@@ -26,6 +26,11 @@ body {
 
 header {
   width: 100%;
+  background-color: rgba(211, 211, 211, 0.37);
+}
+
+header h3 {
+  font-size: 1.75vw;
 }
 
 header a {
@@ -39,6 +44,10 @@ header a {
 
 header a img {
   margin-right: 8px;
+}
+
+main {
+  padding: 16px;
 }
 
 main .title {
@@ -55,7 +64,7 @@ main .title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 5.25vw;
+  margin-bottom: 1.75vw;
 }
 
 main .title h2 {
@@ -194,7 +203,7 @@ footer {
       align-self: center;
   justify-self: flex-end;
   text-align: center;
-  background: lightgray;
+  background: rgba(211, 211, 211, 0.371);
   width: 100%;
   padding: 16px;
 }

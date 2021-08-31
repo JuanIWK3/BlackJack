@@ -24,6 +24,11 @@ body {
 
 header {
   width: 100%;
+  background-color: rgba(211, 211, 211, 0.37);
+
+  h3 {
+    font-size: $base-font-size * .5
+  }
 
   a {
     display: flex;
@@ -37,12 +42,14 @@ header {
 }
 
 main {
+  padding: 16px;
+
   .title {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: $base-font-size * 1.5;
+    margin-bottom: $base-font-size * 0.5;
 
     h2 {
       font-size: $base-font-size * 1.5;
@@ -134,7 +141,7 @@ footer {
   align-self: center;
   justify-self: flex-end;
   text-align: center;
-  background: lightgray;
+  background: rgba(211, 211, 211, 0.371);
   width: 100%;
   padding: 16px;
 }
