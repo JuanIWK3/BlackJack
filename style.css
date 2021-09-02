@@ -4,7 +4,7 @@
           box-sizing: border-box;
   text-decoration: none;
   color: black;
-  font-size: 3.5vw;
+  font-size: 3vw;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -40,7 +40,7 @@ header {
 }
 
 header h3 {
-  font-size: 2.8vw;
+  font-size: 2.4vw;
 }
 
 header .rules {
@@ -57,7 +57,7 @@ header .rules {
 }
 
 header .rules h2 {
-  font-size: 2.8vw;
+  font-size: 2.4vw;
   text-align: end;
 }
 
@@ -92,11 +92,11 @@ main .title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 1.75vw;
+  margin-bottom: 1.5vw;
 }
 
 main .title h2 {
-  font-size: 5.25vw;
+  font-size: 4.5vw;
 }
 
 main .game {
@@ -117,7 +117,7 @@ main .game {
 
 main .game #turn1, main .game #turn2 {
   color: white;
-  font-size: 2.1vw;
+  font-size: 1.8vw;
 }
 
 @media only screen and (min-width: 790px) {
@@ -156,7 +156,7 @@ main .players {
 
 main .players .ptitle {
   justify-self: flex-start;
-  margin-bottom: 5.25vw;
+  margin-bottom: 4.5vw;
 }
 
 main .players .ptitle::after {
@@ -229,7 +229,7 @@ button {
   margin: 8px;
   background: transparent;
   border: 1px solid lightgray;
-  font-size: 3.5vw;
+  font-size: 3vw;
 }
 
 .newcard, .card {
@@ -246,12 +246,12 @@ button {
 }
 
 #start {
-  font-size: 2.8vw;
+  font-size: 2.4vw;
   border-color: lightgreen;
 }
 
 #rules {
-  font-size: 2.8vw;
+  font-size: 2.4vw;
   margin: 16px;
   text-align: center;
   background-color: rgba(211, 211, 211, 0.37);
