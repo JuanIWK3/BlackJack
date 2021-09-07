@@ -89,11 +89,20 @@ function player1won() {
     alert("Player 1 won!!")
     player1wins++;
     document.getElementById("player1-wins").textContent = player1wins;
+    document.getElementById("draw1").style.border = "1px solid lightgray";
+    document.getElementById("stop1").style.border = "1px solid lightgray";
+    document.getElementById("draw2").style.border = "1px solid lightgray";
+    document.getElementById("stop2").style.border = "1px solid lightgray";
+
 };
 function player2won() {
     alert("Player 2 won!!")
     player2wins++;
     document.getElementById("player2-wins").textContent = player2wins;
+    document.getElementById("draw1").style.border = "1px solid lightgray";
+    document.getElementById("stop1").style.border = "1px solid lightgray";
+    document.getElementById("draw2").style.border = "1px solid lightgray";
+    document.getElementById("stop2").style.border = "1px solid lightgray";
 };
 
 function test() {

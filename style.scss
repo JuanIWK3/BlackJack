@@ -23,7 +23,7 @@ header {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: rgba(129, 129, 129, 0.37);
+  background-color: rgba(194, 194, 194, 0.37);
   justify-content: space-between;
 
   h3 {
@@ -68,17 +68,32 @@ main {
   margin-left: .1vw;
   margin-right: .1vw;
   min-width: 300px;
-  max-width: 500px;
-  width: 40%;
+  max-width: 400px;
+  width: 50%;
   
 }
 
 .title {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  
+  h2 {
+    font-size: 36px;
+  }
   margin-bottom: 8px;
+  &::after {
+    content: '';
+    display: block;
+    
+    height: 1px;
+    width: 100%;
+
+    margin: 4px;
+
+    background-color: rgb(92, 92, 92);
+  }
 }
 
 .game, .players, .pgame, .scoreboard {
@@ -131,5 +146,35 @@ button {
 
   background-color: transparent;
   border: $border-base;
-  border-radius: .2rem
+  border-radius: .2rem;
+}
+
+.newcard, .sum {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.draw, .stop, #start {
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(211, 211, 211, 0.344);
+  }
+}
+
+#rules {
+  padding: 8px;
+  text-align: center;
+
+  &::after {
+    content: '';
+    display: block;
+    
+    height: 1px;
+    width: 100%;
+
+    margin: 4px;
+
+    background-color: lightgray;
+  }
 }
