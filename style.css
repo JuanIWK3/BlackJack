@@ -4,12 +4,12 @@
           box-sizing: border-box;
   text-decoration: none;
   color: black;
-  font-size: 3vw;
+  font-size: 24px;
   font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   padding: 0px;
   display: -webkit-box;
@@ -33,14 +33,14 @@ header {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-  background-color: rgba(211, 211, 211, 0.37);
+  background-color: rgba(129, 129, 129, 0.37);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 header h3 {
-  font-size: 2.4vw;
+  font-size: 20px;
 }
 
 header .rules {
@@ -57,7 +57,7 @@ header .rules {
 }
 
 header .rules h2 {
-  font-size: 2.4vw;
+  font-size: 20px;
   text-align: end;
 }
 
@@ -75,31 +75,7 @@ header a img {
 }
 
 main {
-  padding: 16px;
-}
-
-main .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 1.5vw;
-}
-
-main .title h2 {
-  font-size: 4.5vw;
-}
-
-main .game {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,30 +91,31 @@ main .game {
           justify-content: center;
 }
 
-main .game #turn1, main .game #turn2 {
-  color: white;
-  font-size: 1.8vw;
-}
-
-@media only screen and (min-width: 790px) {
-  main .game {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-main .players {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 16px;
+.container {
   border: 1px solid lightgray;
-  border-radius: 0.3rem;
+  border-radius: .5rem;
+  padding: 16px;
+  margin-left: .1vw;
+  margin-right: .1vw;
+  min-width: 300px;
+  max-width: 500px;
+  width: 40%;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 8px;
+}
+
+.game, .players, .pgame, .scoreboard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,111 +126,57 @@ main .players {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-main .players .ptitle {
-  justify-self: flex-start;
-  margin-bottom: 4.5vw;
+.pgame #turn1, .pgame #turn2 {
+  color: transparent;
 }
 
-main .players .ptitle::after {
-  content: " .";
-  color: white;
+.between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.between::before {
+  content: '';
   display: block;
-  background: black;
   height: 1px;
+  width: 100%;
+  margin: 4px;
+  background-color: lightgray;
 }
 
-main .players .pgame {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #playerone {
-  border: 2px solid aqua;
-}
-
-main #playertwo {
-  border: 2px solid red;
-}
-
-main .between {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-width: 16vw;
-  padding: 8px;
-}
-
-main .between .scoreboard {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main .between .scoreboard .wins {
-  border-radius: .2rem;
+.between::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 4px;
+  background-color: lightgray;
 }
 
 button {
-  margin: 8px;
-  background: transparent;
+  margin: 2px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
   border: 1px solid lightgray;
-  font-size: 3vw;
-}
-
-.newcard, .card {
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
   border-radius: .2rem;
-}
-
-#start, .draw, .stop {
-  cursor: pointer;
-  border-radius: .2rem;
-  padding: 8px;
-}
-
-#start {
-  font-size: 2.4vw;
-  border-color: lightgreen;
-}
-
-#rules {
-  font-size: 2.4vw;
-  margin: 16px;
-  text-align: center;
-  background-color: rgba(211, 211, 211, 0.37);
 }
 /*# sourceMappingURL=style.css.map */

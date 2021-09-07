@@ -21,48 +21,51 @@
     </header>
     <p id="rules"></p>
     <main>
-        <div class="title">
-            <h2>BlackJack</h2>
-        </div>
-        <div class="game">
-            <div class="players" id="playerone">
-                <div class="ptitle" id="p1title">
-                    <h2>Player One</h2>
+        <div class="container">
+            <div class="title">
+                <h2>BlackJack</h2>
+            </div>
+            <div class="game">
+                <div class="players" id="playerone">
+                    <div class="ptitle" id="p1title">
+                        <h2>Player One</h2>
 
+                    </div>
+                    <div id="p1game" class="pgame">
+                        <p id="turn1">A</p>
+                        <button class="newcard" id="newcard1">New: 0</button>
+                        <button class="card" id="sum1">Sum: 0</button>
+                        <div class="buttons">
+                            <button class="draw" id="draw1" onclick="draw1()">Draw</button>
+                            <button class="stop" id="stop1" onclick="stop1()">Stop</button>
+                        </div>
+                    </div>
                 </div>
-                <div id="p1game" class="pgame">
-                    <p id="turn1">A</p>
-                    <button class="newcard" id="newcard1">New: 0</button>
-                    <button class="card" id="sum1">Sum: 0</button>
-                    <div class="buttons">
-                        <button class="draw" id="draw1" onclick="draw1()">Draw</button>
-                        <button class="stop" id="stop1" onclick="stop1()">Stop</button>
+                <div class="between">
+                    <div class="scoreboard">
+                        <button class="wins" id="player1-wins">0</button>
+                        <h2>x</h4>
+                            <button class="wins" id="player2-wins">0</button>
+                    </div>
+                    <button id="start" onclick="start()">Start</button>
+                </div>
+                <div class="players" id="playertwo">
+                    <div class="ptitle" id="p2title">
+                        <h2>Player Two</h2>
+
+                    </div>
+                    <div class="pgame" id="p2game">
+                        <p id="turn2">A</p>
+                        <button class="newcard" id="newcard2">New: 0</button>
+                        <button class="card" id="sum2">Sum: 0</button>
+                        <div class="buttons">
+                            <button class="draw" id="draw2" onclick="draw2()">Draw</button>
+                            <button class="stop" id="stop2" onclick="stop2()">Stop</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="between">
-                <div class="scoreboard">
-                    <button class="wins" id="player1-wins">0</button>
-                    <h2>x</h4>
-                        <button class="wins" id="player2-wins">0</button>
-                </div>
-                <button id="start" onclick="start()">Start</button>
-            </div>
-            <div class="players" id="playertwo">
-                <div class="ptitle" id="p2title">
-                    <h2>Player Two</h2>
 
-                </div>
-                <div class="pgame" id="p2game">
-                    <p id="turn2">A</p>
-                    <button class="newcard" id="newcard2">New: 0</button>
-                    <button class="card" id="sum2">Sum: 0</button>
-                    <div class="buttons">
-                        <button class="draw" id="draw2" onclick="draw2()">Draw</button>
-                        <button class="stop" id="stop2" onclick="stop2()">Stop</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
