@@ -6,6 +6,7 @@
   color: black;
   font-size: 24px;
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 body {
@@ -131,7 +132,7 @@ main {
   background-color: #5c5c5c;
 }
 
-@media only screen and (min-width: 925px) {
+@media only screen and (min-width: 750px) {
   .title::after {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -155,7 +156,25 @@ main {
           justify-content: center;
 }
 
-@media only screen and (min-width: 925px) {
+.game .ptitle, .players .ptitle, .pgame .ptitle, .scoreboard .ptitle {
+  text-align: center;
+}
+
+@media only screen and (min-width: 750px) {
+  .scoreboard {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.game {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media only screen and (min-width: 750px) {
   .game {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -204,7 +223,7 @@ main {
   width: 80%;
 }
 
-@media only screen and (min-width: 925px) {
+@media only screen and (min-width: 750px) {
   .btcontainer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -223,9 +242,9 @@ main {
   background-color: lightgray;
 }
 
-@media only screen and (min-width: 925px) {
+@media only screen and (min-width: 750px) {
   .btcontainer::before {
-    height: 100px;
+    height: 150px;
     width: 1px;
   }
 }
@@ -239,9 +258,9 @@ main {
   background-color: lightgray;
 }
 
-@media only screen and (min-width: 925px) {
+@media only screen and (min-width: 750px) {
   .btcontainer::after {
-    height: 100px;
+    height: 150px;
     width: 1px;
   }
 }
