@@ -36,22 +36,22 @@ function start() {
         if (player == 1) {
             //function player1() {
             player1 = true;
-            document.getElementById("turn1").style.color = "black";
-            document.getElementById("turn2").style.color = "white";
+            document.getElementById("turn1").style.color = "white";
+            document.getElementById("turn2").style.color = "transparent";
             document.getElementById("turn1").textContent = "Your turn!";
-            document.getElementById("draw1").style.border = "1px solid aqua";
-            document.getElementById("stop1").style.border = "1px solid aqua";
+            document.getElementById("draw1").style.border = "1px solid orange";
+            document.getElementById("stop1").style.border = "1px solid orange";
             document.getElementById("draw2").style.border = "1px solid lightgray";
             document.getElementById("stop2").style.border = "1px solid lightgray";
         }
         if (player == 2) {
             // function player2() {
             player2 = true;
-            document.getElementById("turn2").style.color = "black";
-            document.getElementById("turn1").style.color = "white";
+            document.getElementById("turn2").style.color = "white";
+            document.getElementById("turn1").style.color = "transparent";
             document.getElementById("turn2").textContent = "Your turn!";
-            document.getElementById("draw2").style.border = "1px solid red";
-            document.getElementById("stop2").style.border = "1px solid red";
+            document.getElementById("draw2").style.border = "1px solid orange";
+            document.getElementById("stop2").style.border = "1px solid orange";
             document.getElementById("draw1").style.border = "1px solid lightgray";
             document.getElementById("stop1").style.border = "1px solid lightgray";
         }
@@ -73,8 +73,10 @@ function start() {
         document.getElementById("sum1").textContent = "Sum: 0"
         document.getElementById("sum2").textContent = "Sum: 0"
 
-        document.getElementById("turn1").style.color = "white";
-        document.getElementById("turn2").style.color = "white";
+        document.getElementById("turn1").style.color = "transparent";
+        document.getElementById("turn2").style.color = "transparent";
+        document.getElementById("turn1").textContent = "a";
+        document.getElementById("turn2").textContent = "a";
 
 
         document.getElementById("draw1").style.border = "1px solid lightgray";
@@ -108,24 +110,24 @@ function player2won() {
 function test() {
     if (sum1 == 21) {
         gameOn = false;
-        document.getElementById("turn2").style.color = "white";
+        document.getElementById("turn2").style.color = "transparent";
         player1won();
     }
     else if (sum2 == 21) {
         gameOn = false;
-        document.getElementById("turn1").style.color = "white";
+        document.getElementById("turn1").style.color = "transparent";
         player2won();
     }
     else if (sum1 > 21) {
         gameOn = false;
         player1finished = true;
-        document.getElementById("turn2").style.color = "white";
+        document.getElementById("turn2").style.color = "transparent";
         player2won();
     }
     else if (sum2 > 21) {
         gameOn = false;
         player2finished = true;
-        document.getElementById("turn1").style.color = "white";
+        document.getElementById("turn1").style.color = "transparent";
         player1won();
     }
     else if (player1finished == true && player2finished == true) {
@@ -152,11 +154,11 @@ function draw1() {
             // function player2() {
             player1 = false;
             player2 = true;
-            document.getElementById("turn2").style.color = "black";
-            document.getElementById("turn1").style.color = "white";
+            document.getElementById("turn2").style.color = "white";
+            document.getElementById("turn1").style.color = "transparent";
             document.getElementById("turn2").textContent = "Your turn!";
-            document.getElementById("draw2").style.border = "1px solid red";
-            document.getElementById("stop2").style.border = "1px solid red";
+            document.getElementById("draw2").style.border = "1px solid orange";
+            document.getElementById("stop2").style.border = "1px solid orange";
             document.getElementById("draw1").style.border = "1px solid lightgray";
             document.getElementById("stop1").style.border = "1px solid lightgray";
         }
@@ -175,11 +177,11 @@ function draw2() {
             //function player1() {
             player1 = true;
             player2 = false;
-            document.getElementById("turn1").style.color = "black";
-            document.getElementById("turn2").style.color = "white";
+            document.getElementById("turn1").style.color = "white";
+            document.getElementById("turn2").style.color = "transparent";
             document.getElementById("turn1").textContent = "Your turn!";
-            document.getElementById("draw1").style.border = "1px solid aqua";
-            document.getElementById("stop1").style.border = "1px solid aqua";
+            document.getElementById("draw1").style.border = "1px solid orange";
+            document.getElementById("stop1").style.border = "1px solid orange";
             document.getElementById("draw2").style.border = "1px solid lightgray";
             document.getElementById("stop2").style.border = "1px solid lightgray";
         }
@@ -196,12 +198,12 @@ function stop1() {
             // function player2() 
             player1 = false;
             player2 = true;
-            document.getElementById("turn1").style.color = "black";
+            document.getElementById("turn1").style.color = "white";
             document.getElementById("turn1").textContent = "Stopped"
-            document.getElementById("turn2").style.color = "black";
+            document.getElementById("turn2").style.color = "white";
             document.getElementById("turn2").textContent = "Your turn!";
-            document.getElementById("draw2").style.border = "1px solid red";
-            document.getElementById("stop2").style.border = "1px solid red";
+            document.getElementById("draw2").style.border = "1px solid orange";
+            document.getElementById("stop2").style.border = "1px solid orange";
             document.getElementById("draw1").style.border = "1px solid lightgray";
             document.getElementById("stop1").style.border = "1px solid lightgray";
         }
@@ -220,11 +222,11 @@ function stop2() {
             //function player1() {
             player1 = true;
             player2 = false;
-            document.getElementById("turn2").style.color = "black";
-            document.getElementById("turn1").style.color = "black";
+            document.getElementById("turn2").style.color = "white";
+            document.getElementById("turn1").style.color = "white";
             document.getElementById("turn1").textContent = "Your turn!";
-            document.getElementById("draw1").style.border = "1px solid aqua";
-            document.getElementById("stop1").style.border = "1px solid aqua";
+            document.getElementById("draw1").style.border = "1px solid orange";
+            document.getElementById("stop1").style.border = "1px solid orange";
             document.getElementById("draw2").style.border = "1px solid lightgray";
             document.getElementById("stop2").style.border = "1px solid lightgray";
         }
