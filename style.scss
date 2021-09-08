@@ -67,7 +67,7 @@ main {
   margin-left: .1vw;
   margin-right: .1vw;
   min-width: 300px;
-  max-width: 400px;
+  max-width: 600px;
   width: 50%;
   
 }
@@ -92,14 +92,25 @@ main {
     margin: 4px;
 
     background-color: rgb(92, 92, 92);
+
+    @media only screen and (min-width: 925px) {
+      display: flex;
+    }
   }
 }
+
 
 .game, .players, .pgame, .scoreboard {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.game {
+  @media only screen and (min-width: 925px) {
+    flex-direction: row;
+  }
 }
 
 .pgame {
@@ -113,7 +124,23 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 8px;
   width: 100%;
+}
+
+.btcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  width: 80%;
+
+  @media only screen and (min-width: 925px) {
+    flex-direction: row;
+    max-width: 150px;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -124,7 +151,13 @@ main {
     margin: 4px;
 
     background-color: lightgray;
+
+    @media only screen and (min-width: 925px) {
+      height: 100px;
+      width: 1px;
+    }
   }
+
   &::after {
     content: '';
     display: block;
@@ -135,11 +168,17 @@ main {
     margin: 4px;
 
     background-color: lightgray;
-  }
 
+    @media only screen and (min-width: 925px) {
+      height: 100px;
+      width: 1px;
+    }
+  }
 }
 
 button {
+  display: flex;
+  flex-direction: column;
   margin: 2px;
   width: max-content;
 
