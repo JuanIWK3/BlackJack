@@ -5,7 +5,7 @@
   text-decoration: none;
   color: white;
   font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
   text-align: center;
 }
 
@@ -14,6 +14,7 @@ body {
   width: 100vw;
   padding: 0px;
   background: url(./images/greenbackground.jpg);
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,6 +204,22 @@ main {
   color: transparent;
 }
 
+.pgame .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media only screen and (min-width: 750px) {
   .pgame {
     -webkit-box-orient: vertical;
@@ -315,11 +332,14 @@ button {
   border-top: none;
   border-left: none;
   border-right: none;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.138);
 }
 
 .draw:hover, .stop:hover, #start:hover {
   cursor: pointer;
-  background-color: rgba(211, 211, 211, 0.344);
+  background-color: rgba(255, 166, 0, 0.344);
 }
 
 #start {

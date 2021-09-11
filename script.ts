@@ -1,30 +1,29 @@
 let sum1 = 0;
 let sum2 = 0;
-player1 = false;
-player2 = false;
-gameOn = false;
-gameFinished = true;
-player1finished = false;
-player2finished = false;
+let player1 = false;
+let player2 = false;
+let gameOn = false;
+let gameFinished = true;
+let player1finished = false;
+let player2finished = false;
 let player1wins = 0;
 let player2wins = 0;
+var card1: number;
+var card2: number;
 
 // card1 = Math.floor(Math.random() * 10) + 2
 
-
-
-
 function start() {
-    if (gameOn == false & gameFinished == true) {
+    if (gameOn == false && gameFinished == true) {
         gameOn = true;
         gameFinished = false;
 
-        player = Math.floor(Math.random() * 2) + 1
+        let player = Math.floor(Math.random() * 2) + 1
 
-        card1 = Math.floor(Math.random() * 10) + 2
+        let card1 = Math.floor(Math.random() * 10) + 2
         sum1 += card1;
 
-        card2 = Math.floor(Math.random() * 10) + 2
+        let card2 = Math.floor(Math.random() * 10) + 2
         sum2 += card2;
 
         document.getElementById("newcard1").textContent = "New: " + card1;
@@ -90,7 +89,7 @@ function start() {
 function player1won() {
     alert("Player 1 won!!")
     player1wins++;
-    document.getElementById("player1-wins").textContent = player1wins;
+    document.getElementById("player1-wins").textContent = String(player1wins);
     document.getElementById("draw1").style.border = "1px solid lightgray";
     document.getElementById("stop1").style.border = "1px solid lightgray";
     document.getElementById("draw2").style.border = "1px solid lightgray";
@@ -100,7 +99,7 @@ function player1won() {
 function player2won() {
     alert("Player 2 won!!")
     player2wins++;
-    document.getElementById("player2-wins").textContent = player2wins;
+    document.getElementById("player2-wins").textContent = String(player2wins);
     document.getElementById("draw1").style.border = "1px solid lightgray";
     document.getElementById("stop1").style.border = "1px solid lightgray";
     document.getElementById("draw2").style.border = "1px solid lightgray";
@@ -144,7 +143,7 @@ function test() {
 }
 
 function draw1() {
-    if ((gameOn == true & player1finished == false) && (player2finished == true || player1 == true)) {
+    if ((gameOn == true && player1finished == false) && (player2finished == true || player1 == true)) {
         card1 = Math.floor(Math.random() * 10) + 2;
         sum1 += card1;
         document.getElementById("newcard1").textContent = "New: " + card1;
@@ -167,7 +166,7 @@ function draw1() {
     }
 }
 function draw2() {
-    if ((gameOn == true & player2finished == false) && (player2 == true || player1finished == true)) {
+    if ((gameOn == true && player2finished == false) && (player2 == true || player1finished == true)) {
         card2 = Math.floor(Math.random() * 10) + 2;
         sum2 += card2;
         document.getElementById("newcard2").textContent = "New: " + card2;
