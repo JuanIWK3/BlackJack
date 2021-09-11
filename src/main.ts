@@ -214,7 +214,7 @@ function stop1() {
 function stop2() {
   if (gameOn == true) {
     player2finished = true;
-    document.getElementById("turn2").textContent = "Stopped"
+    document.getElementById("turn2").textContent = "Stopped";
 
     if (player1finished == false) {
       //function player1() {
@@ -234,7 +234,7 @@ function stop2() {
   }
 }
 
-let rule = false
+let rule = false;
 
 function rules() {
   if (rule == false) {
@@ -247,3 +247,29 @@ function rules() {
     rule = false;
   }
 }
+
+type ID = string;
+
+interface UserInterface {
+  id: ID;
+  name: string;
+  surname: string;
+}
+
+let username: string = "Alex";
+
+let pageName: string | number = "1";
+
+let errorMessage: string | null = null;
+
+let user: UserInterface | null = null;
+
+let someProp: string | number | null | undefined | string[] | object = null;
+
+const user1: UserInterface = {
+  id: "1",
+  name: "Alex",
+  surname: "Mink",
+}
+
+console.log("User " + user1.id + " is " + user1.name + " " + user1.surname)

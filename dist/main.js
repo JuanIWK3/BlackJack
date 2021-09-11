@@ -223,3 +223,18 @@ function rules() {
         rule = false;
     }
 }
+var user1 = {
+    name: "Juan",
+    age: 19,
+    getMessage: function () {
+        return "Hello" + name;
+    }
+};
+var user2 = {
+    name: "Jack",
+    age: 21,
+    getMessage: function () {
+        return "Hello" + name;
+    }
+};
+console.log(user1.getMessage());
