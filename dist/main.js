@@ -224,7 +224,7 @@ function stop2() {
 var rule = false;
 function rules() {
     if (rule == false) {
-        document.getElementById("rules").textContent = "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your sum is greater after both players stop";
+        document.getElementById("rules").textContent = "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your have the greater sum after both players stop";
         rule = true;
     }
     else {
