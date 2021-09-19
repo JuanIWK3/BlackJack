@@ -71,26 +71,33 @@ function start() {
         document.getElementById("stop1").style.border = "1px solid lightgray";
         document.getElementById("draw2").style.border = "1px solid lightgray";
         document.getElementById("stop2").style.border = "1px solid lightgray";
+        document.getElementById("alert-div").style.display = "none";
+        document.getElementById("main").style.filter = 'blur(0)';
+
     }
 }
 function player1won() {
-    alert("Player 1 won!!");
     player1wins++;
     document.getElementById("player1-wins").textContent = String(player1wins);
     document.getElementById("draw1").style.border = "1px solid lightgray";
     document.getElementById("stop1").style.border = "1px solid lightgray";
     document.getElementById("draw2").style.border = "1px solid lightgray";
     document.getElementById("stop2").style.border = "1px solid lightgray";
+    document.getElementById("alert-div").style.display = "flex";
+    document.getElementById("alert").innerText = 'Player 1 won!';
+    document.getElementById("main").style.filter = 'blur(5px)';
 }
 ;
 function player2won() {
-    alert("Player 2 won!!");
     player2wins++;
     document.getElementById("player2-wins").textContent = String(player2wins);
     document.getElementById("draw1").style.border = "1px solid lightgray";
     document.getElementById("stop1").style.border = "1px solid lightgray";
     document.getElementById("draw2").style.border = "1px solid lightgray";
     document.getElementById("stop2").style.border = "1px solid lightgray";
+    document.getElementById("alert-div").style.display = "flex";
+    document.getElementById("alert").innerText = 'Player 2 won!';
+    document.getElementById("main").style.filter = 'blur(5px)';
 }
 ;
 function test() {
@@ -113,7 +120,7 @@ function test() {
     else if (sum2 > 21) {
         gameOn = false;
         player2finished = true;
-        document.getElementById("turn1").style.color = "transparent";
+        document.getElementById("turn1").style.display = "none";
         player1won();
     }
     else if (player1finished == true && player2finished == true) {
@@ -124,7 +131,9 @@ function test() {
             player2won();
         }
         else {
-            alert("The game ended with a tie!");
+            document.getElementById("alert-div").style.display = "flex";
+            document.getElementById("alert").innerText = 'The game ended with a tie!';
+            document.getElementById("main").style.filter = 'blur(5px)';
         }
     }
 }
@@ -223,18 +232,3 @@ function rules() {
         rule = false;
     }
 }
-var user1 = {
-    name: "Juan",
-    age: 19,
-    getMessage: function () {
-        return "Hello" + name;
-    }
-};
-var user2 = {
-    name: "Jack",
-    age: 21,
-    getMessage: function () {
-        return "Hello" + name;
-    }
-};
-console.log(user1.getMessage());

@@ -86,23 +86,26 @@ function start() {
 }
 
 function player1won() {
-  alert("Player 1 won!!")
   player1wins++;
   document.getElementById("player1-wins").textContent = String(player1wins);
   document.getElementById("draw1").style.border = "1px solid lightgray";
   document.getElementById("stop1").style.border = "1px solid lightgray";
   document.getElementById("draw2").style.border = "1px solid lightgray";
   document.getElementById("stop2").style.border = "1px solid lightgray";
+  document.getElementById("alert-div").style.display = "flex";
+  document.getElementById("alert").innerText = 'Player 1 won!';
+  document.getElementById("")
 
 };
 function player2won() {
-  alert("Player 2 won!!")
   player2wins++;
   document.getElementById("player2-wins").textContent = String(player2wins);
   document.getElementById("draw1").style.border = "1px solid lightgray";
   document.getElementById("stop1").style.border = "1px solid lightgray";
   document.getElementById("draw2").style.border = "1px solid lightgray";
   document.getElementById("stop2").style.border = "1px solid lightgray";
+  document.getElementById("alert-div").style.display = "flex";
+  document.getElementById("alert").innerText = 'Player 2 won!';
 };
 
 function test() {
@@ -125,7 +128,7 @@ function test() {
   else if (sum2 > 21) {
     gameOn = false;
     player2finished = true;
-    document.getElementById("turn1").style.color = "transparent";
+    document.getElementById("turn1").style.display = "none";
     player1won();
   }
   else if (player1finished == true && player2finished == true) {
@@ -136,7 +139,8 @@ function test() {
       player2won();
     }
     else {
-      alert("The game ended with a tie!")
+      document.getElementById("alert-div").style.display = "flex";
+      document.getElementById("alert").innerText = 'The game ended with a tie!';
     }
   }
 }
@@ -247,29 +251,3 @@ function rules() {
     rule = false;
   }
 }
-
-type ID = string;
-
-interface UserInterface {
-  id: ID;
-  name: string;
-  surname: string;
-}
-
-let username: string = "Alex";
-
-let pageName: string | number = "1";
-
-let errorMessage: string | null = null;
-
-let user: UserInterface | null = null;
-
-let someProp: string | number | null | undefined | string[] | object = null;
-
-const user1: UserInterface = {
-  id: "1",
-  name: "Alex",
-  surname: "Mink",
-}
-
-console.log("User " + user1.id + " is " + user1.name + " " + user1.surname)

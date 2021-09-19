@@ -359,4 +359,45 @@ button {
   margin: 4px;
   background-color: lightgray;
 }
+
+.alert {
+  width: 80%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  display: none;
+  background: rgba(0, 0, 0, 0.467);
+  z-index: 5;
+}
+
+.alert p {
+  color: goldenrod;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.alert button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 166, 0, 0.344);
+}
 /*# sourceMappingURL=style.css.map */

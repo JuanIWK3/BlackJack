@@ -124,6 +124,7 @@ main {
 
 .players {
   justify-content: space-around;
+  
   @media only screen and (min-width: 750px) {
     height: 80%;
   }
@@ -266,5 +267,47 @@ button {
     margin: 4px;
 
     background-color: lightgray;
+  }
+}
+
+.alert {
+  width: 80%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid lightgray;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+
+  display: none;
+
+  background: rgba(0, 0, 0, 0.467);
+
+  z-index: 5;
+
+  p {
+    color: goldenrod;
+    font-size: 2rem;
+    margin-bottom: 8px;
+
+  }
+
+  button{
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 166, 0, 0.344);
+    }
   }
 }
