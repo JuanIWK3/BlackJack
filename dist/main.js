@@ -1,7 +1,9 @@
 var sum1 = 0;
 var sum2 = 0;
 var card1;
+var cards1 = [];
 var card2;
+var cards2 = [];
 var player1 = false;
 var player2 = false;
 var gameOn = false;
@@ -10,17 +12,24 @@ var player1finished = false;
 var player2finished = false;
 var player1wins = 0;
 var player2wins = 0;
+function alertclose() {
+    document.getElementById("alert-div").style.display = "none";
+    document.getElementById("main").style.filter = 'blur(0)';
+}
 function start() {
     if (gameOn == false && gameFinished == true) {
         gameOn = true;
         gameFinished = false;
         var player = Math.floor(Math.random() * 2) + 1;
-        var card1_1 = Math.floor(Math.random() * 10) + 2;
-        sum1 += card1_1;
-        var card2_1 = Math.floor(Math.random() * 10) + 2;
-        sum2 += card2_1;
-        document.getElementById("newcard1").textContent = "New: " + card1_1;
-        document.getElementById("newcard2").textContent = "New: " + card2_1;
+        card1 = Math.floor(Math.random() * 10) + 2;
+        cards1.push(card1);
+        sum1 += card1;
+        console.log(cards1);
+        card2 = Math.floor(Math.random() * 10) + 2;
+        cards2.push(card2);
+        sum2 += card2;
+        document.getElementById("newcard1").textContent = "Cards: " + cards1;
+        document.getElementById("newcard2").textContent = "Cards: " + cards2;
         document.getElementById("sum1").textContent = "Sum: " + sum1;
         document.getElementById("sum2").textContent = "Sum: " + sum2;
         document.getElementById("start").textContent = "Finish";
@@ -50,17 +59,19 @@ function start() {
     else {
         gameOn = false;
         gameFinished = true;
-        document.getElementById("start").textContent = "Start";
+        document.getElementById("start").textContent = "Play";
         card1 = 0;
         card2 = 0;
+        cards1 = [];
+        cards2 = [];
         sum1 = 0;
         sum2 = 0;
         player1 = false;
         player2 = false;
         player1finished = false;
         player2finished = false;
-        document.getElementById("newcard1").textContent = "New: 0";
-        document.getElementById("newcard2").textContent = "New: 0";
+        document.getElementById("newcard1").textContent = "Cards: 0";
+        document.getElementById("newcard2").textContent = "Cards: 0";
         document.getElementById("sum1").textContent = "Sum: 0";
         document.getElementById("sum2").textContent = "Sum: 0";
         document.getElementById("turn1").style.color = "transparent";
@@ -71,9 +82,6 @@ function start() {
         document.getElementById("stop1").style.border = "1px solid lightgray";
         document.getElementById("draw2").style.border = "1px solid lightgray";
         document.getElementById("stop2").style.border = "1px solid lightgray";
-        document.getElementById("alert-div").style.display = "none";
-        document.getElementById("main").style.filter = 'blur(0)';
-
     }
 }
 function player1won() {
@@ -86,6 +94,7 @@ function player1won() {
     document.getElementById("alert-div").style.display = "flex";
     document.getElementById("alert").innerText = 'Player 1 won!';
     document.getElementById("main").style.filter = 'blur(5px)';
+    setTimeout(function () { alertclose(); }, 2000);
 }
 ;
 function player2won() {
@@ -98,17 +107,20 @@ function player2won() {
     document.getElementById("alert-div").style.display = "flex";
     document.getElementById("alert").innerText = 'Player 2 won!';
     document.getElementById("main").style.filter = 'blur(5px)';
+    setTimeout(function () { alertclose(); }, 2000);
 }
 ;
 function test() {
     if (sum1 == 21) {
         gameOn = false;
+        document.getElementById("turn1").style.color = "transparent";
         document.getElementById("turn2").style.color = "transparent";
         player1won();
     }
     else if (sum2 == 21) {
         gameOn = false;
         document.getElementById("turn1").style.color = "transparent";
+        document.getElementById("turn2").style.color = "transparent";
         player2won();
     }
     else if (sum1 > 21) {
@@ -120,7 +132,7 @@ function test() {
     else if (sum2 > 21) {
         gameOn = false;
         player2finished = true;
-        document.getElementById("turn1").style.display = "none";
+        document.getElementById("turn1").style.display = "transparent";
         player1won();
     }
     else if (player1finished == true && player2finished == true) {
@@ -131,17 +143,19 @@ function test() {
             player2won();
         }
         else {
+            document.getElementById("main").style.filter = 'blur(5px)';
             document.getElementById("alert-div").style.display = "flex";
             document.getElementById("alert").innerText = 'The game ended with a tie!';
-            document.getElementById("main").style.filter = 'blur(5px)';
+            setTimeout(function () { alertclose(); }, 2000);
         }
     }
 }
 function draw1() {
     if ((gameOn == true && player1finished == false) && (player2finished == true || player1 == true)) {
         card1 = Math.floor(Math.random() * 10) + 2;
+        cards1.push(card1);
         sum1 += card1;
-        document.getElementById("newcard1").textContent = "New: " + card1;
+        document.getElementById("newcard1").textContent = "Cards: " + cards1;
         document.getElementById("sum1").textContent = "Sum: " + sum1;
         if (player2finished == false) {
             // function player2() {
@@ -161,8 +175,9 @@ function draw1() {
 function draw2() {
     if ((gameOn == true && player2finished == false) && (player2 == true || player1finished == true)) {
         card2 = Math.floor(Math.random() * 10) + 2;
+        cards2.push(card2);
         sum2 += card2;
-        document.getElementById("newcard2").textContent = "New: " + card2;
+        document.getElementById("newcard2").textContent = "Cards: " + cards2;
         document.getElementById("sum2").textContent = "Sum: " + sum2;
         if (player1finished == false) {
             //function player1() {
@@ -224,7 +239,7 @@ function stop2() {
 var rule = false;
 function rules() {
     if (rule == false) {
-        document.getElementById("rules").textContent = "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your have the greater sum after both players stop";
+        document.getElementById("rules").textContent = "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your sum is greater after both players stop";
         rule = true;
     }
     else {
