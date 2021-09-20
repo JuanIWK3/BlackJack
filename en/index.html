@@ -10,19 +10,22 @@
 </head>
 
 <body>
+    <script>
+        ptbr = false;
+    </script>
     <div id="alert-div" class="alert">
         <p id="alert"></p>
     </div>
 
     <header>
         <a href="https://juaniwk3.github.io/projects.html">
-            <img height="16" src="./images/lefticon.svg" alt="">
             <h3>Projects</h3>
         </a>
         <div onclick="rules()" class="rules">
             <h2>Rules</h2>
         </div>
     </header>
+
     <p id="rules"></p>
     <main id="main">
         <div class="container">
@@ -53,7 +56,7 @@
                             <h2>x</h4>
                                 <button class="wins" id="player2-wins">0</button>
                         </div>
-                        <button id="start" onclick="start()">Start</button>
+                        <button id="start" onclick="start()">Play</button>
                     </div>
                 </div>
                 <div class="players" id="playertwo">
@@ -74,9 +77,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
+    <footer>
+        <div class="lang">
+            <a href="../ptbr/index.html">
+                <img src="../images/bricon.png" alt="">
+            </a>
+        </div>
+    </footer>
 
     <script src="./dist/main.js"></script>
 </body>

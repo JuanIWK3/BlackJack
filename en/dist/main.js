@@ -12,6 +12,7 @@ var player1finished = false;
 var player2finished = false;
 var player1wins = 0;
 var player2wins = 0;
+var ptbr;
 function alertclose() {
     document.getElementById("alert-div").style.display = "none";
     document.getElementById("main").style.filter = 'blur(0)';
@@ -28,11 +29,20 @@ function start() {
         card2 = Math.floor(Math.random() * 10) + 2;
         cards2.push(card2);
         sum2 += card2;
-        document.getElementById("newcard1").textContent = "Cards: " + cards1;
-        document.getElementById("newcard2").textContent = "Cards: " + cards2;
-        document.getElementById("sum1").textContent = "Sum: " + sum1;
-        document.getElementById("sum2").textContent = "Sum: " + sum2;
-        document.getElementById("start").textContent = "Finish";
+        if (ptbr == true) {
+            document.getElementById("newcard1").textContent = "Cartas: " + cards1;
+            document.getElementById("newcard2").textContent = "Cartas: " + cards2;
+            document.getElementById("sum1").textContent = "Soma: " + sum1;
+            document.getElementById("sum2").textContent = "Soma: " + sum2;
+            document.getElementById("start").textContent = "Fim";
+        }
+        else {
+            document.getElementById("newcard1").textContent = "Cards: " + cards1;
+            document.getElementById("newcard2").textContent = "Cards: " + cards2;
+            document.getElementById("sum1").textContent = "Sum: " + sum1;
+            document.getElementById("sum2").textContent = "Sum: " + sum2;
+            document.getElementById("start").textContent = "Finish";
+        }
         if (player == 1) {
             //function player1() {
             player1 = true;

@@ -1,3 +1,17 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "cSpell.words": [
+    "bralertclose",
+    "brcard",
+    "brcards",
+    "brdraw",
+    "brgame",
+    "brplayer",
+    "brrule",
+    "brrules",
+    "brstart",
+    "brstop",
+    "brsum",
+    "brtest"
+  ]
 }

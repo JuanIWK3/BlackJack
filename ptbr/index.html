@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BlackJack</title>
+</head>
+
+<body>
+    <script>
+        ptbr = false;
+    </script>
+    <div id="alert-div" class="alert">
+        <p id="alert"></p>
+    </div>
+
+    <header>
+        <a href="https://juaniwk3.github.io/projects.html">
+            <h3>Projetos</h3>
+        </a>
+        <div onclick="rules()" class="rules">
+            <h2>Regras</h2>
+        </div>
+    </header>
+    <p id="rules"></p>
+    <main id="main">
+        <div class="container">
+            <div class="title">
+                <h2>BlackJack</h2>
+            </div>
+            <div class="game">
+                <div class="players" id="playerone">
+                    <div class="ptitle" id="p1title">
+                        <h2>Jogador 1</h2>
+                    </div>
+                    <div id="p1game" class="pgame">
+                        <p id="turn1">A</p>
+                        <div class="cards">
+                            <button class="newcard" id="newcard1">Cartas: 0</button>
+                            <button class="sum" id="sum1">Soma: 0</button>
+                        </div>
+                        <div class="buttons">
+                            <button class="draw" id="draw1" onclick="draw1()">Pedir</button>
+                            <button class="stop" id="stop1" onclick="stop1()">Parar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btcontainer">
+                    <div class="between">
+                        <div class="scoreboard">
+                            <button class="wins" id="player1-wins">0</button>
+                            <h2>x</h4>
+                                <button class="wins" id="player2-wins">0</button>
+                        </div>
+                        <button id="start" onclick="start()">Jogar</button>
+                    </div>
+                </div>
+                <div class="players" id="playertwo">
+                    <div class="ptitle" id="p2title">
+                        <h2>Jogador 2</h2>
+
+                    </div>
+                    <div class="pgame" id="p2game">
+                        <p id="turn2">A</p>
+                        <div class="cards">
+                            <button class="newcard" id="newcard2">Cartas: 0</button>
+                            <button class="sum" id="sum2">Soma: 0</button>
+                        </div>
+                        <div class="buttons">
+                            <button class="draw" id="draw2" onclick="draw2()">Pedir</button>
+                            <button class="stop" id="stop2" onclick="stop2()">Parar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="lang">
+            <a href="../en/index.html">
+                <img src="../images/usaicon.png" alt="">
+            </a>
+        </div>
+    </footer>
+    <script src="./dist/main.js"></script>
+</body>
+
+</html>

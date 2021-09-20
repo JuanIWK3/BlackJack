@@ -17,7 +17,7 @@ body {
   width: 100vw;
   padding: 0px;
 
-  background: url(./images/greenbackground.jpg);
+  background: url(../images/greenbackground.jpg);
   background-size: cover;
 
   display: flex;
@@ -130,6 +130,12 @@ main {
 
 .players {
   justify-content: space-around;
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   @media only screen and (min-width: 900px) {
     height: 80%;
@@ -323,5 +329,13 @@ button {
       cursor: pointer;
       background-color: rgba(255, 166, 0, 0.344);
     }
+  }
+}
+
+footer {
+  padding-left: 8px;
+  width: 30px;
+  img{
+    height: 30px;
   }
 }
