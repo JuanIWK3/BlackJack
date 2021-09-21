@@ -12,61 +12,63 @@ var player1finished = false;
 var player2finished = false;
 var player1wins = 0;
 var player2wins = 0;
-var ptbr;
+var rule = false;
 function alertclose() {
     document.getElementById("alert-div").style.display = "none";
     document.getElementById("main").style.filter = 'blur(0)';
+}
+function getRandomCardPlayer1() {
+    card1 = Math.floor(Math.random() * 10) + 2;
+    cards1.push(card1);
+    sum1 += card1;
+    document.getElementById("newcard1").textContent = "Cards: " + cards1;
+    document.getElementById("sum1").textContent = "Sum: " + sum1;
+}
+function getRandomCardPlayer2() {
+    card2 = Math.floor(Math.random() * 10) + 2;
+    cards2.push(card2);
+    sum2 += card2;
+    document.getElementById("newcard2").textContent = "Cards: " + cards2;
+    document.getElementById("sum2").textContent = "Sum: " + sum2;
+}
+function selectPlayer1() {
+    player1 = true;
+    document.getElementById("turn1").style.color = "white";
+    document.getElementById("turn2").style.color = "transparent";
+    document.getElementById("turn1").textContent = "Your turn!";
+    document.getElementById("draw1").style.border = "1px solid orange";
+    document.getElementById("stop1").style.border = "1px solid orange";
+    document.getElementById("draw2").style.border = "1px solid lightgray";
+    document.getElementById("stop2").style.border = "1px solid lightgray";
+}
+function selectPlayer2() {
+    player2 = true;
+    document.getElementById("turn2").style.color = "white";
+    document.getElementById("turn1").style.color = "transparent";
+    document.getElementById("turn2").textContent = "Your turn!";
+    document.getElementById("draw2").style.border = "1px solid orange";
+    document.getElementById("stop2").style.border = "1px solid orange";
+    document.getElementById("draw1").style.border = "1px solid lightgray";
+    document.getElementById("stop1").style.border = "1px solid lightgray";
 }
 function start() {
     if (gameOn == false && gameFinished == true) {
         gameOn = true;
         gameFinished = false;
+        // Select the player
         var player = Math.floor(Math.random() * 2) + 1;
-        card1 = Math.floor(Math.random() * 10) + 2;
-        cards1.push(card1);
-        sum1 += card1;
-        console.log(cards1);
-        card2 = Math.floor(Math.random() * 10) + 2;
-        cards2.push(card2);
-        sum2 += card2;
-        if (ptbr == true) {
-            document.getElementById("newcard1").textContent = "Cartas: " + cards1;
-            document.getElementById("newcard2").textContent = "Cartas: " + cards2;
-            document.getElementById("sum1").textContent = "Soma: " + sum1;
-            document.getElementById("sum2").textContent = "Soma: " + sum2;
-            document.getElementById("start").textContent = "Fim";
-        }
-        else {
-            document.getElementById("newcard1").textContent = "Cards: " + cards1;
-            document.getElementById("newcard2").textContent = "Cards: " + cards2;
-            document.getElementById("sum1").textContent = "Sum: " + sum1;
-            document.getElementById("sum2").textContent = "Sum: " + sum2;
-            document.getElementById("start").textContent = "Finish";
-        }
+        // Select the cards
+        getRandomCardPlayer1();
+        getRandomCardPlayer2();
         if (player == 1) {
-            //function player1() {
-            player1 = true;
-            document.getElementById("turn1").style.color = "white";
-            document.getElementById("turn2").style.color = "transparent";
-            document.getElementById("turn1").textContent = "Your turn!";
-            document.getElementById("draw1").style.border = "1px solid orange";
-            document.getElementById("stop1").style.border = "1px solid orange";
-            document.getElementById("draw2").style.border = "1px solid lightgray";
-            document.getElementById("stop2").style.border = "1px solid lightgray";
+            selectPlayer1();
         }
         if (player == 2) {
-            // function player2() {
-            player2 = true;
-            document.getElementById("turn2").style.color = "white";
-            document.getElementById("turn1").style.color = "transparent";
-            document.getElementById("turn2").textContent = "Your turn!";
-            document.getElementById("draw2").style.border = "1px solid orange";
-            document.getElementById("stop2").style.border = "1px solid orange";
-            document.getElementById("draw1").style.border = "1px solid lightgray";
-            document.getElementById("stop1").style.border = "1px solid lightgray";
+            selectPlayer2();
         }
+        document.getElementById("start").textContent = "Finish";
     }
-    else {
+    else { // Finish Button
         gameOn = false;
         gameFinished = true;
         document.getElementById("start").textContent = "Play";
@@ -162,44 +164,18 @@ function test() {
 }
 function draw1() {
     if ((gameOn == true && player1finished == false) && (player2finished == true || player1 == true)) {
-        card1 = Math.floor(Math.random() * 10) + 2;
-        cards1.push(card1);
-        sum1 += card1;
-        document.getElementById("newcard1").textContent = "Cards: " + cards1;
-        document.getElementById("sum1").textContent = "Sum: " + sum1;
+        getRandomCardPlayer1();
         if (player2finished == false) {
-            // function player2() {
-            player1 = false;
-            player2 = true;
-            document.getElementById("turn2").style.color = "white";
-            document.getElementById("turn1").style.color = "transparent";
-            document.getElementById("turn2").textContent = "Your turn!";
-            document.getElementById("draw2").style.border = "1px solid orange";
-            document.getElementById("stop2").style.border = "1px solid orange";
-            document.getElementById("draw1").style.border = "1px solid lightgray";
-            document.getElementById("stop1").style.border = "1px solid lightgray";
+            selectPlayer2();
         }
         test();
     }
 }
 function draw2() {
     if ((gameOn == true && player2finished == false) && (player2 == true || player1finished == true)) {
-        card2 = Math.floor(Math.random() * 10) + 2;
-        cards2.push(card2);
-        sum2 += card2;
-        document.getElementById("newcard2").textContent = "Cards: " + cards2;
-        document.getElementById("sum2").textContent = "Sum: " + sum2;
+        getRandomCardPlayer2();
         if (player1finished == false) {
-            //function player1() {
-            player1 = true;
-            player2 = false;
-            document.getElementById("turn1").style.color = "white";
-            document.getElementById("turn2").style.color = "transparent";
-            document.getElementById("turn1").textContent = "Your turn!";
-            document.getElementById("draw1").style.border = "1px solid orange";
-            document.getElementById("stop1").style.border = "1px solid orange";
-            document.getElementById("draw2").style.border = "1px solid lightgray";
-            document.getElementById("stop2").style.border = "1px solid lightgray";
+            selectPlayer1();
         }
         test();
     }
@@ -208,17 +184,7 @@ function stop1() {
     if (gameOn == true) {
         player1finished = true;
         if (player2finished == false) {
-            // function player2() 
-            player1 = false;
-            player2 = true;
-            document.getElementById("turn1").style.color = "white";
-            document.getElementById("turn1").textContent = "Stopped";
-            document.getElementById("turn2").style.color = "white";
-            document.getElementById("turn2").textContent = "Your turn!";
-            document.getElementById("draw2").style.border = "1px solid orange";
-            document.getElementById("stop2").style.border = "1px solid orange";
-            document.getElementById("draw1").style.border = "1px solid lightgray";
-            document.getElementById("stop1").style.border = "1px solid lightgray";
+            selectPlayer2();
         }
         else {
             test();
@@ -230,23 +196,13 @@ function stop2() {
         player2finished = true;
         document.getElementById("turn2").textContent = "Stopped";
         if (player1finished == false) {
-            //function player1() {
-            player1 = true;
-            player2 = false;
-            document.getElementById("turn2").style.color = "white";
-            document.getElementById("turn1").style.color = "white";
-            document.getElementById("turn1").textContent = "Your turn!";
-            document.getElementById("draw1").style.border = "1px solid orange";
-            document.getElementById("stop1").style.border = "1px solid orange";
-            document.getElementById("draw2").style.border = "1px solid lightgray";
-            document.getElementById("stop2").style.border = "1px solid lightgray";
+            selectPlayer1();
         }
         else {
             test();
         }
     }
 }
-var rule = false;
 function rules() {
     if (rule == false) {
         document.getElementById("rules").textContent = "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your sum is greater after both players stop";
