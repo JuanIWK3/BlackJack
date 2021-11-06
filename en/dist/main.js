@@ -15,7 +15,7 @@ var player2wins = 0;
 var rule = false;
 function alertclose() {
     document.getElementById("alert-div").style.display = "none";
-    document.getElementById("main").style.filter = 'blur(0)';
+    document.getElementById("main").style.filter = "blur(0)";
 }
 function getRandomCardPlayer1() {
     card1 = Math.floor(Math.random() * 10) + 2;
@@ -23,6 +23,7 @@ function getRandomCardPlayer1() {
     sum1 += card1;
     document.getElementById("newcard1").textContent = "Cards: " + cards1;
     document.getElementById("sum1").textContent = "Sum: " + sum1;
+    player1 = false;
 }
 function getRandomCardPlayer2() {
     card2 = Math.floor(Math.random() * 10) + 2;
@@ -30,6 +31,7 @@ function getRandomCardPlayer2() {
     sum2 += card2;
     document.getElementById("newcard2").textContent = "Cards: " + cards2;
     document.getElementById("sum2").textContent = "Sum: " + sum2;
+    player2 = false;
 }
 function selectPlayer1() {
     player1 = true;
@@ -68,7 +70,8 @@ function start() {
         }
         document.getElementById("start").textContent = "Finish";
     }
-    else { // Finish Button
+    else {
+        // Finish Button
         gameOn = false;
         gameFinished = true;
         document.getElementById("start").textContent = "Play";
@@ -104,11 +107,12 @@ function player1won() {
     document.getElementById("draw2").style.border = "1px solid lightgray";
     document.getElementById("stop2").style.border = "1px solid lightgray";
     document.getElementById("alert-div").style.display = "flex";
-    document.getElementById("alert").innerText = 'Player 1 won!';
-    document.getElementById("main").style.filter = 'blur(5px)';
-    setTimeout(function () { alertclose(); }, 2000);
+    document.getElementById("alert").innerText = "Player 1 won!";
+    document.getElementById("main").style.filter = "blur(5px)";
+    setTimeout(function () {
+        alertclose();
+    }, 2000);
 }
-;
 function player2won() {
     player2wins++;
     document.getElementById("player2-wins").textContent = String(player2wins);
@@ -117,11 +121,12 @@ function player2won() {
     document.getElementById("draw2").style.border = "1px solid lightgray";
     document.getElementById("stop2").style.border = "1px solid lightgray";
     document.getElementById("alert-div").style.display = "flex";
-    document.getElementById("alert").innerText = 'Player 2 won!';
-    document.getElementById("main").style.filter = 'blur(5px)';
-    setTimeout(function () { alertclose(); }, 2000);
+    document.getElementById("alert").innerText = "Player 2 won!";
+    document.getElementById("main").style.filter = "blur(5px)";
+    setTimeout(function () {
+        alertclose();
+    }, 2000);
 }
-;
 function test() {
     if (sum1 == 21) {
         gameOn = false;
@@ -155,15 +160,19 @@ function test() {
             player2won();
         }
         else {
-            document.getElementById("main").style.filter = 'blur(5px)';
+            document.getElementById("main").style.filter = "blur(5px)";
             document.getElementById("alert-div").style.display = "flex";
-            document.getElementById("alert").innerText = 'The game ended with a tie!';
-            setTimeout(function () { alertclose(); }, 2000);
+            document.getElementById("alert").innerText = "The game ended with a tie!";
+            setTimeout(function () {
+                alertclose();
+            }, 2000);
         }
     }
 }
 function draw1() {
-    if ((gameOn == true && player1finished == false) && (player2finished == true || player1 == true)) {
+    if (gameOn == true &&
+        player1finished == false &&
+        (player2finished == true || player1 == true)) {
         getRandomCardPlayer1();
         if (player2finished == false) {
             selectPlayer2();
@@ -172,7 +181,9 @@ function draw1() {
     }
 }
 function draw2() {
-    if ((gameOn == true && player2finished == false) && (player2 == true || player1finished == true)) {
+    if (gameOn == true &&
+        player2finished == false &&
+        (player2 == true || player1finished == true)) {
         getRandomCardPlayer2();
         if (player1finished == false) {
             selectPlayer1();
@@ -205,7 +216,8 @@ function stop2() {
 }
 function rules() {
     if (rule == false) {
-        document.getElementById("rules").textContent = "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your sum is greater after both players stop";
+        document.getElementById("rules").textContent =
+            "When the game starts, both players receive a random card. The first player will be randomly selected. You can draw a new card or stop. You win when the sum equals 21 or your sum is greater after both players stop";
         rule = true;
     }
     else {
